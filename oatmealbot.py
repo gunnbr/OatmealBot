@@ -1,9 +1,14 @@
 #!/usr/bin/python
 
-import os, struct, array, time
+import os, struct, array, time, sys
 from fcntl import ioctl
 import pigpio
 import atexit
+import math
+import translatemotoroutputs
+from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
+
+debug = True
 
 pi = pigpio.pi()
 
@@ -11,16 +16,21 @@ joyfn = '/dev/input/js0'
 jsdev = -1
 LED_PIN = 26
 
-# We'll store the states here.
+# We'll store the button states here.
 axis_states = {}
 button_states = {}
 
+# Create the MotorHat object using default settings,
+# no changes to I2C address or frequency
+#mh = Adafruit_MotorHAT(addr=0x60)
+
 def emergencyShutdown():
-    #global mh
+    # Full stop on all the motors
     #mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
     #mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
     #mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
     #mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
+
     pi.wave_tx_stop()
     error_flash = []
     error_flash.append(pigpio.pulse(1<<LED_PIN,    0, 100000))
@@ -76,8 +86,6 @@ axis_names = {
     0x35 : 'circle',   # ps3
     0x36 : 'x',   # ps3
     0x37 : 'square',   # ps3
-    
-
 }
 
 button_names = {
@@ -186,15 +194,13 @@ def controlBot():
     evbuf = jsdev.read(8)
     if evbuf:
         time, value, type, number = struct.unpack('IhBB', evbuf)
-
-        if type & 0x80:
+        #print ("Type: 0x{:02x} Number: 0x{:02x} Value: {:d}".format(type,number,value))
+               
+        if type & 0x80: # JS_EVENT_INIT
             return
             #print "(initial)",
 
-        if type & 0x01:
-            if number == 0x31 or number == 0x3c or number == 0x3d or number == 0x3e:
-                print "Skipping {}".format(number)
-                return
+        if type & 0x01: # JS_EVENT_BUTTON
             button = button_map[number]
             if button:
                 button_states[button] = value
@@ -202,19 +208,37 @@ def controlBot():
                     print "%s pressed" % (button)
                 else:
                     print "%s released" % (button)
+            else:
+                print "Unknown button 0x%x event" % (button)
 
-        if type & 0x02:
+        if type & 0x02: # JS_EVENT_AXIS
+
+            # Ignore the accelerometer axes
             if number == 0x19 or number == 0x17 or number == 0x1a or number == 0x18:
                 return
+
+            # In fact, ignore all the axes except for the 3 we care about right now
+            if number != 0 and number != 1 and number != 2:
+                return
+            
             #print "axis 0x{:02x}".format(number)
             axis = axis_map[number]
             if axis:
-                fvalue = value / 32767.0
+                # Value returned is the range -32767 to 32767
+                # Convert to -255 to 255 by dividing by 128.5
+                fvalue = value / 128.5
                 axis_states[axis] = fvalue
-                print "%s: %.3f" % (axis, fvalue)
+                #print "%s: %.3f" % (axis, fvalue)
+                print (" X {:>6.3f}  Y {:>6.3f}  R {:>6.3f}".format(axis_states["x"],
+                                                                    axis_states["y"],
+                                                                    axis_states["z"]))
     
 def main():
-    global jsdev
+    global jsdev,debug,mh
+
+    if len(sys.argv) > 1 and sys.argv[1] == "quiet":
+        debug = False
+
     pi.set_mode(LED_PIN, pigpio.OUTPUT)
 
     # 100 ms flash once every 2 seconds to indicate connection
