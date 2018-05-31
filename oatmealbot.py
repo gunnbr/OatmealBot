@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import os, struct, array, time, sys
+import threading
 from fcntl import ioctl
 import pigpio
 import atexit
@@ -8,7 +9,7 @@ import math
 import translatemotoroutputs
 from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 
-debug = True
+debug = False
 
 pi = pigpio.pi()
 
@@ -22,14 +23,19 @@ button_states = {}
 
 # Create the MotorHat object using default settings,
 # no changes to I2C address or frequency
-#mh = Adafruit_MotorHAT(addr=0x60)
+mh = Adafruit_MotorHAT(addr=0x60)
+
+exiting = False
 
 def emergencyShutdown():
+    global exiting
+    
+    exiting = True
     # Full stop on all the motors
-    #mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
-    #mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
-    #mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
-    #mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
+    mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
+    mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
+    mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
+    mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
 
     pi.wave_tx_stop()
     error_flash = []
@@ -136,6 +142,43 @@ button_names = {
 axis_map = []
 button_map = []
 
+joy_x = 0
+joy_y = 0
+joy_r = 0
+
+class MotionControlThread (threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+    def run(self):
+        global exiting, debug, joy_x, joy_y, joy_r
+        while not exiting:
+            outputs = translatemotoroutputs.translate(joy_x, joy_y, joy_r)
+
+            #if debug:
+                #print ("M1 {:>6.0f} M2 {:>6.0f} M3 {:>6.0f}".format(outputs.m1, outputs.m2, outputs.m3))
+
+            m1 = mh.getMotor(1)
+            m2 = mh.getMotor(2)
+            m3 = mh.getMotor(3)
+            
+            m1.setSpeed(int(abs(outputs.m1)))
+            if outputs.m1 < 0:
+                m1.run(Adafruit_MotorHAT.BACKWARD)
+            else:
+                m1.run(Adafruit_MotorHAT.FORWARD)
+            
+            m2.setSpeed(int(abs(outputs.m2)))
+            if outputs.m2 < 0:
+                m2.run(Adafruit_MotorHAT.BACKWARD)
+            else:
+                m2.run(Adafruit_MotorHAT.FORWARD)
+            
+            m3.setSpeed(int(abs(outputs.m3)))
+            if outputs.m3 < 0:
+                m3.run(Adafruit_MotorHAT.BACKWARD)
+            else:
+                m3.run(Adafruit_MotorHAT.FORWARD)
+    
 def connectJoystick():
     global joyfn, jsdev, axis_names, pi
     led_status = 1
@@ -189,8 +232,8 @@ def connectJoystick():
             print('Joystick not connected. Waiting...')
             time.sleep(1)
 
-def controlBot():
-    global jsdev
+def readJoysticks():
+    global jsdev, joy_x, joy_y, joy_r
     evbuf = jsdev.read(8)
     if evbuf:
         time, value, type, number = struct.unpack('IhBB', evbuf)
@@ -204,11 +247,12 @@ def controlBot():
             button = button_map[number]
             if button:
                 button_states[button] = value
-                if value:
-                    print "%s pressed" % (button)
-                else:
-                    print "%s released" % (button)
-            else:
+                if debug:
+                    if value:
+                        print "%s pressed" % (button)
+                    else:
+                        print "%s released" % (button)
+            elif debug:
                 print "Unknown button 0x%x event" % (button)
 
         if type & 0x02: # JS_EVENT_AXIS
@@ -223,24 +267,31 @@ def controlBot():
             
             #print "axis 0x{:02x}".format(number)
             axis = axis_map[number]
-            if axis:
-                # Value returned is the range -32767 to 32767
-                # Convert to -255 to 255 by dividing by 128.5
-                fvalue = value / 128.5
-                axis_states[axis] = fvalue
-                #print "%s: %.3f" % (axis, fvalue)
+            if not axis:
+                return
+            
+            # Value returned is the range -32767 to 32767
+            # Convert to -255 to 255 by dividing by 128.5
+            fvalue = value / 128.5
+            axis_states[axis] = fvalue
+            #print "%s: %.3f" % (axis, fvalue)
+            joy_x = axis_states["x"]
+            joy_y = axis_states["y"]
+            joy_r = axis_states["z"]
+            if debug:
                 print (" X {:>6.3f}  Y {:>6.3f}  R {:>6.3f}".format(axis_states["x"],
                                                                     axis_states["y"],
                                                                     axis_states["z"]))
     
 def main():
-    global jsdev,debug,mh
+    global jsdev,debug,mh, exiting
 
     if len(sys.argv) > 1 and sys.argv[1] == "quiet":
         debug = False
 
     pi.set_mode(LED_PIN, pigpio.OUTPUT)
 
+    
     # 100 ms flash once every 2 seconds to indicate connection
     happy_flash = []
     happy_flash.append(pigpio.pulse(1<<LED_PIN,    0, 100000))
@@ -249,19 +300,28 @@ def main():
     pi.wave_add_generic(happy_flash)
     happyFlash = pi.wave_create() # create and save id
 
-    while True:
-        pi.wave_tx_stop()
-        
-        connectJoystick()
+    controlThread = MotionControlThread()
 
-        pi.wave_send_repeat(happyFlash)
-        error = False
-        while not error:
-            try:
-                controlBot()
-            except IOError:
-                error = True;
-                jsdev = -1
+    controlThread.start()
+    
+    while not exiting:
+        try:
+            pi.wave_tx_stop()
+        
+            connectJoystick()
+
+            pi.wave_send_repeat(happyFlash)
+            error = False
+            while not error:
+                try:
+                    readJoysticks()
+                except IOError:
+                    error = True;
+                    jsdev = -1
+        except KeyboardInterrupt:
+            print "Got keyboard interrupt. Exiting..."
+            exiting = True
+    print "Done looping"
                 
 if __name__ == "__main__":
     print "OatmealBox starting..."
