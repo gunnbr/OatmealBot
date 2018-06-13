@@ -1,0 +1,52 @@
+To use a BT USB dongle with the Arduino Zero/Feather M0/SAMD21:
+https://github.com/bluekitchen/btstack
+Which is from:
+http://bluekitchen-gmbh.com/
+But it doesn't look like USB is very much supported. But maybe it is--it is referenced a few times.
+
+Maybe port https://www.circuitsathome.com/category/mcu/arduino/usb-shield/ to the M0?
+The latest version does support some native USB: https://github.com/felis/UHS30
+
+Bluetooth spec:
+https://www.bluetooth.com/specifications/bluetooth-core-specification
+
+Atmel Studio contains an ASF example of a host vendor USB device. Looks like this is a template
+for how a Bluetooth HCI class driver can be written.
+Documentation about it is here: http://www.atmel.com/Images/Atmel-42336-ASF-USB-Stack-Manual_ApplicationNote_AT09331.pdf
+
+Or port this, which is already for an embedded system and PS3 controller:
+http://www.fourwalledcubicle.com/ExplorerBot.php
+https://github.com/abcminiuser/explorerbot/tree/master/Code
+
+New plan:
+Run it from the Pi Zero.
+
+From https://medium.com/home-wireless/headless-streaming-video-with-the-raspberry-pi-zero-w-and-raspberry-pi-camera-38bef1968e1
+and https://github.com/cncjs/cncjs/wiki/Setup-Guide:-Raspberry-Pi-%7C-MJPEG-Streamer-Install-&-Setup-&-FFMpeg-Recording
+
+To stream video from the Pi: 
+mjpg_streamer -i "input_raspicam.so -x 1920 -y 1080" -o 'output_http.so -w ./www'
+
+Then in a browser, go to:
+http://10.0.0.37:8080/?action=stream
+
+Article with the formulas:
+https://stackoverflow.com/questions/3748037/how-to-control-a-kiwi-drive-robot
+
+Gears in my kit: 2.00 mm inner diameter
+Tower Pro micro server: 
+	Inner diameter between 1.5 and 1.75 mm (designed for a screw)
+	Outer diameter: 2.85 mm
+
+Pi Adapter/control board: (22 total GPIO pins)
+	Power in (easy to detach connector?)
+	Voltage converter to 5V pin on Pi expansion header
+	Headers to plug in the 4 motors with an easy way to connect them to the motor driver board and with A and B from the rotary encoder (8 GPIO lines)
+	Headers for 4 servos (4 GPIO lines)
+	SPI header for OLED display (5 GPIO)
+	SPI header for other things (1 additional GPIO)
+	LED indicators: (2 GPIO)
+		1 neutral color indicate Bluetooth connection status
+		1 red for error conditions
+	
+Adafruit Feature board that's similar

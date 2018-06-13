@@ -1,0 +1,10 @@
+http://www.societyofrobots.com/robot_omni_wheel.shtml
+
+http://files.andymark.com/2008CON-Omni-Baker-McKenzie.pdf
+
+http://basicrobot.blogspot.nl/2006/08/how-to-control-omni-direction-wheel.html
+
+http://robotics.stackexchange.com/questions/7829/how-to-program-three-wheel-omni
+
+http://stackoverflow.com/questions/3748037/how-to-control-a-kiwi-drive-robot
+
