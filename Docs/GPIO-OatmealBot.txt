@@ -1,0 +1,49 @@
+GPIO Pin	Usage
+	0	ID_SC
+	1	ID_SD
+	2	I2C SDA
+	3	I2C SCL
+	4	
+	5	Motor 4 B
+	6	Motor 4 A
+	7	CS Other device
+	8	CS OLED Screen
+	9	MISO
+	10	MOSI
+	11	SCLK
+	12	Servo 1
+	13	Motor 3 A
+	14	Serial TX
+	15	Serial RX
+	16	Motor 2 A
+	17	Servo 3
+	18	Servo 2
+	19	Motor 3 B
+	20	Motor 1 B
+	21	Motor 1 A
+	22	Status LED
+	23	Error LED
+	24	High power 1 (Headlight)
+	25	High power 2 (???)
+	26	Motor 2 B
+
+Yet to add:
+	Motor 1 plug
+	Motor 2 plug
+	Motor 3 plug
+	Motor 4 plug
+	Power supply Plug
+	Voltage protector
+	OLED screen plug
+	Other SPI device plug
+	Servo 1 plug
+	Servo 2 plug
+	Servo 3 plug
+	Serial port connector
+	Status LED
+	Error LED
+	MOSFET 1
+	MOSFET 2
+	I2C Connector
+	ID EEPROM
+	
