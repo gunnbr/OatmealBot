@@ -421,4 +421,164 @@ Wire Wire Line
 	7900 4450 8000 4450
 Wire Wire Line
 	7900 4550 8000 4550
+$Comp
+L R R?
+U 1 1 5B24C1E3
+P 8350 3350
+F 0 "R?" V 8430 3350 50  0000 C CNN
+F 1 "330" V 8350 3350 50  0000 C CNN
+F 2 "" V 8280 3350 50  0000 C CNN
+F 3 "" H 8350 3350 50  0000 C CNN
+	1    8350 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5B24C256
+P 5700 3350
+F 0 "R?" V 5780 3350 50  0000 C CNN
+F 1 "330" V 5700 3350 50  0000 C CNN
+F 2 "" V 5630 3350 50  0000 C CNN
+F 3 "" H 5700 3350 50  0000 C CNN
+	1    5700 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D?
+U 1 1 5B24C2BD
+P 8800 3350
+F 0 "D?" H 8800 3450 50  0000 C CNN
+F 1 "LED" H 8800 3250 50  0000 C CNN
+F 2 "" H 8800 3350 50  0000 C CNN
+F 3 "" H 8800 3350 50  0000 C CNN
+	1    8800 3350
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D?
+U 1 1 5B24C3DB
+P 5250 3350
+F 0 "D?" H 5250 3450 50  0000 C CNN
+F 1 "LED" H 5250 3250 50  0000 C CNN
+F 2 "" H 5250 3350 50  0000 C CNN
+F 3 "" H 5250 3350 50  0000 C CNN
+	1    5250 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5B24C448
+P 9200 3350
+F 0 "#PWR?" H 9200 3100 50  0001 C CNN
+F 1 "GND" H 9200 3200 50  0000 C CNN
+F 2 "" H 9200 3350 50  0000 C CNN
+F 3 "" H 9200 3350 50  0000 C CNN
+	1    9200 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5B24C48C
+P 4900 3350
+F 0 "#PWR?" H 4900 3100 50  0001 C CNN
+F 1 "GND" H 4900 3200 50  0000 C CNN
+F 2 "" H 4900 3350 50  0000 C CNN
+F 3 "" H 4900 3350 50  0000 C CNN
+	1    4900 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 3350 8200 3350
+Wire Wire Line
+	8500 3350 8600 3350
+Wire Wire Line
+	9000 3350 9200 3350
+Wire Wire Line
+	6000 3350 5850 3350
+Wire Wire Line
+	5550 3350 5450 3350
+Wire Wire Line
+	5050 3350 4900 3350
+Text Notes 8600 3300 2    60   Italic 0
+Verify Value
+$Comp
+L ServoHeader J?
+U 1 1 5B24CC4B
+P 1250 7350
+F 0 "J?" V 1600 7200 60  0000 C CNN
+F 1 "ServoHeader1" H 1250 7000 60  0000 C CNN
+F 2 "" H 1200 7350 60  0001 C CNN
+F 3 "" H 1200 7350 60  0001 C CNN
+	1    1250 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ServoHeader J?
+U 1 1 5B24CCA8
+P 2100 7350
+F 0 "J?" V 2450 7200 60  0000 C CNN
+F 1 "ServoHeader2" H 2100 7000 60  0000 C CNN
+F 2 "" H 2050 7350 60  0001 C CNN
+F 3 "" H 2050 7350 60  0001 C CNN
+	1    2100 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L ServoHeader J?
+U 1 1 5B24CCF1
+P 2950 7350
+F 0 "J?" V 3300 7200 60  0000 C CNN
+F 1 "ServoHeader3" H 2950 7000 60  0000 C CNN
+F 2 "" H 2900 7350 60  0001 C CNN
+F 3 "" H 2900 7350 60  0001 C CNN
+	1    2950 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5B24CDE6
+P 800 6550
+F 0 "#PWR?" H 800 6300 50  0001 C CNN
+F 1 "GND" H 800 6400 50  0000 C CNN
+F 2 "" H 800 6550 50  0000 C CNN
+F 3 "" H 800 6550 50  0000 C CNN
+	1    800  6550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 7150 1050 6550
+Wire Wire Line
+	800  6550 2750 6550
+Wire Wire Line
+	1900 6550 1900 7150
+Connection ~ 1050 6550
+Wire Wire Line
+	2750 6550 2750 7150
+Connection ~ 1900 6550
+Text GLabel 800  6150 1    60   Input ~ 0
++5V
+Wire Wire Line
+	1250 7150 1250 6400
+Wire Wire Line
+	800  6400 2950 6400
+Wire Wire Line
+	800  6400 800  6150
+Wire Wire Line
+	2100 6400 2100 7150
+Connection ~ 1250 6400
+Wire Wire Line
+	2950 6400 2950 7150
+Connection ~ 2100 6400
+Text GLabel 1450 7000 1    60   Input Italic 0
+Servo1
+Text GLabel 2300 7000 1    60   Input Italic 0
+Servo2
+Text GLabel 3150 7000 1    60   Input Italic 0
+Servo3
+Wire Wire Line
+	1450 7150 1450 7000
+Wire Wire Line
+	2300 7150 2300 7000
+Wire Wire Line
+	3150 7150 3150 7000
 $EndSCHEMATC
