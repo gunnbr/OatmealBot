@@ -1,4 +1,4 @@
-update=Sunday, June 10, 2018 'PMt' 09:58:37 PM
+update=Friday, June 15, 2018 'PMt' 09:34:01 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=schminktronics
+LibName31=/Users/gunnbr/Dropbox/KiCad/library/schminktronics
