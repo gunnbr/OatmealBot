@@ -3,7 +3,7 @@ GPIO Pin	Usage
 	1	ID_SD
 	2	I2C SDA
 	3	I2C SCL
-	4	
+	4	High power 1 (Headlight)
 	5	Motor 4 B
 	6	Motor 4 A
 	7	CS Other device
@@ -23,19 +23,18 @@ GPIO Pin	Usage
 	21	Motor 1 A
 	22	Status LED
 	23	Error LED
-	24	High power 1 (Headlight)
-	25	High power 2 (???)
+	24	OLED Reset
+	25	OLED DC
 	26	Motor 2 B
 
 Yet to add:
-	Serial port connector
-	OLED screen plug
 	MOSFET 1
-	MOSFET 2
 	I2C Connector
 	Other SPI device plug
 	ID EEPROM
 	Voltage protector
+	* OLED screen plug
+	* Serial port connector
 	* Motor 1 plug
 	* Motor 2 plug
 	* Motor 3 plug
