@@ -659,4 +659,6 @@ F 3 "" H 10750 1000 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	10300 1000 10750 1000
+Text Notes 9300 600  0    60   ~ 0
+Add voltage protector on +5V!
 $EndSCHEMATC

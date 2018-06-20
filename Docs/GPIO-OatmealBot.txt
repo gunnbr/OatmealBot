@@ -28,23 +28,23 @@ GPIO Pin	Usage
 	26	Motor 2 B
 
 Yet to add:
+	Serial port connector
+	OLED screen plug
+	MOSFET 1
+	MOSFET 2
+	I2C Connector
+	Other SPI device plug
+	ID EEPROM
+	Voltage protector
 	* Motor 1 plug
 	* Motor 2 plug
 	* Motor 3 plug
 	* Motor 4 plug
 	* Power supply Plug
-	Voltage protector
-	OLED screen plug
-	Other SPI device plug
 	* Servo 1 plug
 	* Servo 2 plug
 	* Servo 3 plug
-	Serial port connector
 	* Status LED
 	* Error LED
-	MOSFET 1
-	MOSFET 2
-	I2C Connector
-	ID EEPROM
 	* Power for motor hat connector
 	
