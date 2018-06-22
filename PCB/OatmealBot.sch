@@ -72,7 +72,7 @@ U 1 1 5B1C4526
 P 2150 2650
 F 0 "J9" H 2150 2100 60  0000 C CNN
 F 1 "Motor 2" H 2150 3150 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Angled_1x06_Pitch2.54mm" H 2250 2450 60  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 2250 2450 60  0001 C CNN
 F 3 "" H 2250 2450 60  0001 C CNN
 	1    2150 2650
 	-1   0    0    -1  
