@@ -947,4 +947,53 @@ Wire Wire Line
 	6000 3050 5950 3050
 Wire Wire Line
 	6000 4550 5950 4550
+$Comp
+L Q_NMOS_GDS Q?
+U 1 1 5B37B0AF
+P 4800 5700
+F 0 "Q?" H 5100 5750 50  0000 R CNN
+F 1 "STP55NF06L" H 5450 5650 50  0000 R CNN
+F 2 "" H 5000 5800 50  0000 C CNN
+F 3 "" H 4800 5700 50  0000 C CNN
+	1    4800 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5B37B1D3
+P 4900 6100
+F 0 "#PWR?" H 4900 5850 50  0001 C CNN
+F 1 "GND" H 4900 5950 50  0000 C CNN
+F 2 "" H 4900 6100 50  0000 C CNN
+F 3 "" H 4900 6100 50  0000 C CNN
+	1    4900 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5B37B2B8
+P 4350 5850
+F 0 "R?" V 4430 5850 50  0000 C CNN
+F 1 "10K" V 4350 5850 50  0000 C CNN
+F 2 "" V 4280 5850 50  0000 C CNN
+F 3 "" H 4350 5850 50  0000 C CNN
+	1    4350 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 5900 4900 6100
+Wire Wire Line
+	4150 5700 4600 5700
+Wire Wire Line
+	4350 6000 4900 6000
+Connection ~ 4900 6000
+Text GLabel 5850 2950 0    60   Output ~ 0
+Headlight
+Wire Wire Line
+	6000 2950 5850 2950
+Text GLabel 4150 5700 0    60   Input ~ 0
+Headlight
+Connection ~ 4350 5700
+Text Notes 4400 5400 0    60   Italic 0
+Add terminal block for headlight
 $EndSCHEMATC
