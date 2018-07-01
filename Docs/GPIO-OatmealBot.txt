@@ -26,13 +26,15 @@ GPIO Pin	Usage
 	24	OLED Reset
 	25	OLED DC
 	26	Motor 2 B
+	27	High power 2
 
 Yet to add:
-	MOSFET 1
 	I2C Connector
 	Other SPI device plug
 	ID EEPROM
 	Voltage protector
+	* MOSFET 1
+	* MOSFET 2
 	* OLED screen plug
 	* Serial port connector
 	* Motor 1 plug
