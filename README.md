@@ -1,5 +1,5 @@
-# OtamealBot
-OatmealBot is a robot built on a circular platform using 3 omniwheels and
+# OatmealBot
+OatmealBot is a robot built on a circular platform using 3 [omni wheels](https://en.wikipedia.org/wiki/Omni_wheel) and
 controlled using a PS3 controller. It's named OatmealBot because it was
 originally designed so the control hardware could be hidden under a
 cylindrical box of oatmeal.
