@@ -35,7 +35,7 @@ EELAYER 25 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -516,23 +516,23 @@ $EndComp
 $Comp
 L ServoHeader J7
 U 1 1 5B24CCA8
-P 2100 7350
-F 0 "J7" V 2450 7200 60  0000 C CNN
-F 1 "ServoHeader2" H 2100 7000 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 2050 7350 60  0001 C CNN
-F 3 "" H 2050 7350 60  0001 C CNN
-	1    2100 7350
+P 2000 7350
+F 0 "J7" V 2350 7200 60  0000 C CNN
+F 1 "ServoHeader2" H 2000 7000 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 1950 7350 60  0001 C CNN
+F 3 "" H 1950 7350 60  0001 C CNN
+	1    2000 7350
 	1    0    0    -1  
 $EndComp
 $Comp
 L ServoHeader J10
 U 1 1 5B24CCF1
-P 2950 7350
-F 0 "J10" V 3300 7200 60  0000 C CNN
-F 1 "ServoHeader3" H 2950 7000 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 2900 7350 60  0001 C CNN
-F 3 "" H 2900 7350 60  0001 C CNN
-	1    2950 7350
+P 2750 7350
+F 0 "J10" V 3100 7200 60  0000 C CNN
+F 1 "ServoHeader3" H 2750 7000 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 2700 7350 60  0001 C CNN
+F 3 "" H 2700 7350 60  0001 C CNN
+	1    2750 7350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -549,35 +549,35 @@ $EndComp
 Wire Wire Line
 	1050 7150 1050 6550
 Wire Wire Line
-	600  6550 6000 6550
+	600  6550 5550 6550
 Wire Wire Line
-	1900 6550 1900 7150
+	1800 6550 1800 7150
 Connection ~ 1050 6550
 Wire Wire Line
-	2750 6550 2750 7150
-Connection ~ 1900 6550
+	2550 6550 2550 7150
+Connection ~ 1800 6550
 Text GLabel 800  6050 1    60   Input ~ 0
 +5V
 Wire Wire Line
 	1250 6250 1250 7150
 Wire Wire Line
-	1250 6400 6200 6400
+	1250 6400 5750 6400
 Wire Wire Line
-	2100 6400 2100 7150
+	2000 6400 2000 7150
 Connection ~ 1250 6400
 Wire Wire Line
-	2950 6400 2950 7150
-Connection ~ 2100 6400
+	2750 6400 2750 7150
+Connection ~ 2000 6400
 Text GLabel 1450 7000 1    60   Input Italic 0
 Servo1
-Text GLabel 2300 7000 1    60   Input Italic 0
+Text GLabel 2200 7000 1    60   Input Italic 0
 Servo2
-Text GLabel 3150 7000 1    60   Input Italic 0
+Text GLabel 2950 7000 1    60   Input Italic 0
 Servo3
 Wire Wire Line
-	2300 7150 2300 7000
+	2200 7150 2200 7000
 Wire Wire Line
-	3150 7150 3150 7000
+	2950 7150 2950 7000
 $Comp
 L PololuD24V22F U4
 U 1 1 5B288608
@@ -1078,75 +1078,75 @@ Wire Wire Line
 $Comp
 L ServoHeader J?
 U 1 1 5B483D64
-P 3750 7350
-F 0 "J?" V 4100 7200 60  0000 C CNN
-F 1 "ServoHeader1" H 3750 7000 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 3700 7350 60  0001 C CNN
-F 3 "" H 3700 7350 60  0001 C CNN
-	1    3750 7350
+P 3500 7350
+F 0 "J?" V 3850 7200 60  0000 C CNN
+F 1 "ServoHeader1" H 3500 7000 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 3450 7350 60  0001 C CNN
+F 3 "" H 3450 7350 60  0001 C CNN
+	1    3500 7350
 	1    0    0    -1  
 $EndComp
 $Comp
 L ServoHeader J?
 U 1 1 5B483D6A
-P 4600 7350
-F 0 "J?" V 4950 7200 60  0000 C CNN
-F 1 "ServoHeader2" H 4600 7000 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 4550 7350 60  0001 C CNN
-F 3 "" H 4550 7350 60  0001 C CNN
-	1    4600 7350
+P 4250 7350
+F 0 "J?" V 4600 7200 60  0000 C CNN
+F 1 "ServoHeader2" H 4250 7000 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 4200 7350 60  0001 C CNN
+F 3 "" H 4200 7350 60  0001 C CNN
+	1    4250 7350
 	1    0    0    -1  
 $EndComp
 $Comp
 L ServoHeader J?
 U 1 1 5B483D70
-P 5450 7350
-F 0 "J?" V 5800 7200 60  0000 C CNN
-F 1 "ServoHeader3" H 5450 7000 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 5400 7350 60  0001 C CNN
-F 3 "" H 5400 7350 60  0001 C CNN
-	1    5450 7350
+P 5000 7350
+F 0 "J?" V 5350 7200 60  0000 C CNN
+F 1 "ServoHeader3" H 5000 7000 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 4950 7350 60  0001 C CNN
+F 3 "" H 4950 7350 60  0001 C CNN
+	1    5000 7350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3550 6550 3550 7150
+	3300 6550 3300 7150
 Wire Wire Line
-	4400 6550 4400 7150
+	4050 6550 4050 7150
 Wire Wire Line
-	5250 6550 5250 7150
+	4800 6550 4800 7150
 Wire Wire Line
-	3750 6400 3750 7150
+	3500 6400 3500 7150
 Wire Wire Line
-	4600 6400 4600 7150
+	4250 6400 4250 7150
 Wire Wire Line
-	5450 6400 5450 7150
+	5000 6400 5000 7150
 Wire Wire Line
-	4800 7150 4800 7000
+	4450 7150 4450 7000
 Wire Wire Line
-	3950 7150 3950 7000
+	3700 7150 3700 7000
 $Comp
 L ServoHeader J?
 U 1 1 5B4845B9
-P 6200 7350
-F 0 "J?" V 6550 7200 60  0000 C CNN
-F 1 "ServoHeader3" H 6200 7000 60  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 6150 7350 60  0001 C CNN
-F 3 "" H 6150 7350 60  0001 C CNN
-	1    6200 7350
+P 5750 7350
+F 0 "J?" V 6100 7200 60  0000 C CNN
+F 1 "ServoHeader3" H 5750 7000 60  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 5700 7350 60  0001 C CNN
+F 3 "" H 5700 7350 60  0001 C CNN
+	1    5750 7350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6000 6550 6000 7150
+	5550 6550 5550 7150
 Wire Wire Line
-	6200 6400 6200 7150
-Connection ~ 2750 6550
-Connection ~ 3550 6550
-Connection ~ 4400 6550
-Connection ~ 5250 6550
-Connection ~ 2950 6400
-Connection ~ 3750 6400
-Connection ~ 4600 6400
-Connection ~ 5450 6400
+	5750 6400 5750 7150
+Connection ~ 2550 6550
+Connection ~ 3300 6550
+Connection ~ 4050 6550
+Connection ~ 4800 6550
+Connection ~ 2750 6400
+Connection ~ 3500 6400
+Connection ~ 4250 6400
+Connection ~ 5000 6400
 $Comp
 L CP C?
 U 1 1 5B484DE6
@@ -1171,22 +1171,28 @@ Wire Wire Line
 Wire Wire Line
 	6000 2850 5850 2850
 Wire Wire Line
-	8950 6250 8650 6250
+	8650 6250 8950 6250
 Wire Wire Line
 	8800 6100 8800 6250
 Connection ~ 8800 6250
 Wire Wire Line
 	8350 6250 8150 6250
-Text GLabel 3950 7000 1    60   Output ~ 0
+Text GLabel 3700 7000 1    60   Output ~ 0
 Servo4
-Text GLabel 4800 7000 1    60   Output ~ 0
+Text GLabel 4450 7000 1    60   Output ~ 0
 Servo5
-Text GLabel 5650 7000 1    60   Output ~ 0
+Text GLabel 5200 7000 1    60   Output ~ 0
 Servo6
-Text GLabel 6400 7000 1    60   Output ~ 0
+Text GLabel 5950 7000 1    60   Output ~ 0
 Servo7
 Wire Wire Line
-	6400 7000 6400 7150
+	5950 7000 5950 7150
 Wire Wire Line
-	5650 7150 5650 7000
+	5200 7150 5200 7000
+$Sheet
+S 3900 5050 1250 500 
+U 5B4A79AB
+F0 "MotorController" 60
+F1 "OatmealBoxMotorController.sch" 60
+$EndSheet
 $EndSCHEMATC
