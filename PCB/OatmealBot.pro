@@ -1,4 +1,4 @@
-update=Wednesday, July 04, 2018 'PMt' 10:14:03 PM
+update=7/18/2018 2:04:13 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -61,3 +61,13 @@ LibName29=contrib
 LibName30=valves
 LibName31=schminktronics
 LibName32=/Users/gunnbr/Dropbox/KiCad/library/schminktronics
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
