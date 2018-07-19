@@ -195,8 +195,6 @@ F 3 "" H 4200 3550 60  0001 C CNN
 	1    4200 3550
 	1    0    0    -1  
 $EndComp
-Text GLabel 3950 2400 1    60   Input ~ 0
-+3.3V
 $Comp
 L GND #PWR05
 U 1 1 5B24A42D
@@ -979,8 +977,6 @@ HighPower2
 Wire Wire Line
 	7150 3200 7000 3200
 Connection ~ 7200 750 
-Text GLabel 6500 3600 0    60   Input ~ 0
-+3.3V
 Wire Wire Line
 	7150 3400 6600 3400
 Wire Wire Line
@@ -1212,4 +1208,30 @@ Wire Wire Line
 	1050 2850 1400 2850
 Wire Wire Line
 	1400 2850 1400 2400
+$Comp
+L +3.3V #PWR027
+U 1 1 5B503843
+P 3950 2400
+F 0 "#PWR027" H 3950 2250 50  0001 C CNN
+F 1 "+3.3V" H 3950 2540 50  0000 C CNN
+F 2 "" H 3950 2400 50  0001 C CNN
+F 3 "" H 3950 2400 50  0001 C CNN
+	1    3950 2400
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7150 3900
+NoConn ~ 9050 3900
+NoConn ~ 9050 3800
+$Comp
+L +3.3V #PWR028
+U 1 1 5B5043F5
+P 6500 3600
+F 0 "#PWR028" H 6500 3450 50  0001 C CNN
+F 1 "+3.3V" H 6500 3740 50  0000 C CNN
+F 2 "" H 6500 3600 50  0001 C CNN
+F 3 "" H 6500 3600 50  0001 C CNN
+	1    6500 3600
+	0    -1   -1   0   
+$EndComp
+Connection ~ 800  6550
 $EndSCHEMATC
