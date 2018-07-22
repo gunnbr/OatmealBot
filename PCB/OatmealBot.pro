@@ -59,8 +59,7 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-LibName31=schminktronics
-LibName32=/Users/gunnbr/Dropbox/KiCad/library/schminktronics
+LibName31=/Users/gunnbr/Dropbox/KiCad/library/schminktronics
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
