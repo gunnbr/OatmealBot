@@ -1101,7 +1101,7 @@ $Sheet
 S 500  2650 550  2050
 U 5B4A79AB
 F0 "MotorController" 60
-F1 "OatmealBoxMotorController.sch" 60
+F1 "OatmealBotMotorController.sch" 60
 F2 "Motor1+" I R 1050 3000 60 
 F3 "Motor1-" I R 1050 3150 60 
 F4 "Motor2+" I R 1050 3300 60 
