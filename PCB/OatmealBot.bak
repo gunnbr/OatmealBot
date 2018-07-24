@@ -902,7 +902,7 @@ U 1 1 5B386F16
 P 8250 1650
 F 0 "P3" H 8250 1800 50  0000 C CNN
 F 1 "Headlight" V 8350 1650 50  0000 C CNN
-F 2 "" H 8250 1650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 8250 1650 50  0001 C CNN
 F 3 "" H 8250 1650 50  0000 C CNN
 	1    8250 1650
 	1    0    0    1   
@@ -930,7 +930,7 @@ U 1 1 5B387549
 P 8200 750
 F 0 "P2" H 8200 900 50  0000 C CNN
 F 1 "HighPower2" V 8300 750 50  0000 C CNN
-F 2 "" H 8200 750 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 8200 750 50  0001 C CNN
 F 3 "" H 8200 750 50  0000 C CNN
 	1    8200 750 
 	1    0    0    1   
@@ -1061,7 +1061,7 @@ U 1 1 5B484DE6
 P 800 6400
 F 0 "C1" H 825 6500 50  0000 L CNN
 F 1 "470uF" H 825 6300 50  0000 L CNN
-F 2 "" H 838 6250 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:CP_Radial_D12.5mm_P5.00mm" H 838 6250 50  0001 C CNN
 F 3 "" H 800 6400 50  0001 C CNN
 	1    800  6400
 	1    0    0    -1  
@@ -1101,7 +1101,7 @@ $Sheet
 S 500  2650 550  2050
 U 5B4A79AB
 F0 "MotorController" 60
-F1 "OatmealBoxMotorController.sch" 60
+F1 "OatmealBotMotorController.sch" 60
 F2 "Motor1+" I R 1050 3000 60 
 F3 "Motor1-" I R 1050 3150 60 
 F4 "Motor2+" I R 1050 3300 60 
