@@ -514,7 +514,7 @@ U 1 1 5B502510
 P 7700 2350
 F 0 "C2" H 7725 2450 50  0000 L CNN
 F 1 "10uF" H 7725 2250 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:CP_Radial_D5.0mm_P2.50mm" H 7738 2200 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7738 2200 50  0001 C CNN
 F 3 "" H 7700 2350 50  0001 C CNN
 	1    7700 2350
 	1    0    0    -1  
@@ -525,7 +525,7 @@ U 1 1 5B50255E
 P 8100 2350
 F 0 "C4" H 8125 2450 50  0000 L CNN
 F 1 "10uF" H 8125 2250 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:CP_Radial_D5.0mm_P2.50mm" H 8138 2200 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 8138 2200 50  0001 C CNN
 F 3 "" H 8100 2350 50  0001 C CNN
 	1    8100 2350
 	1    0    0    -1  
@@ -606,7 +606,7 @@ U 1 1 5B502D2A
 P 7900 3600
 F 0 "C3" H 7925 3700 50  0000 L CNN
 F 1 "47uF" H 7925 3500 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:CP_Radial_D5.0mm_P2.50mm" H 7938 3450 50  0001 C CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 7938 3450 50  0001 C CNN
 F 3 "" H 7900 3600 50  0001 C CNN
 	1    7900 3600
 	1    0    0    -1  
@@ -617,7 +617,7 @@ U 1 1 5B502D5A
 P 8550 3600
 F 0 "C6" H 8575 3700 50  0000 L CNN
 F 1 "47uF" H 8575 3500 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:CP_Radial_D5.0mm_P2.50mm" H 8588 3450 50  0001 C CNN
+F 2 "Capacitors_SMD:C_1206_HandSoldering" H 8588 3450 50  0001 C CNN
 F 3 "" H 8550 3600 50  0001 C CNN
 	1    8550 3600
 	1    0    0    -1  

@@ -1060,8 +1060,8 @@ L CP C1
 U 1 1 5B484DE6
 P 800 6400
 F 0 "C1" H 825 6500 50  0000 L CNN
-F 1 "470uF" H 825 6300 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:CP_Radial_D12.5mm_P5.00mm" H 838 6250 50  0001 C CNN
+F 1 "330uF" H 825 6300 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:CP_Radial_D6.3mm_P2.50mm" H 838 6250 50  0001 C CNN
 F 3 "" H 800 6400 50  0001 C CNN
 	1    800  6400
 	1    0    0    -1  
